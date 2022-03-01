@@ -39,6 +39,7 @@ html {
   font-weight: 400;
   margin-left: 0.5em;
   border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .menu {
@@ -143,7 +144,24 @@ html {
   flex-direction: row;
 }
 
+.trends {
+  width:30%;
+  padding: 0.5em;
+}
+
+.trending_clucks {
+  padding: 1em;
+  border: 1px solid black;
+}
+
+.trending_hash_tags {
+  padding-top: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
 .clucks {
+  width: 70%;
   display: flex;
   flex-direction: column;
 }
@@ -169,4 +187,25 @@ img.cluck_image {
 .cluck_image_url {
   max-width: 100%;
   max-height: auto;
+}
+
+/*** Hide the Trends listings in aside
+if viewing on a mobile device with 
+width no bigger than 450 pixels. ***/
+
+@media (max-width: 640px) {
+  .menu button,
+  .menu label {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-left: 0.3em;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .clucks {
+    width: 100%;
+  }
 }
