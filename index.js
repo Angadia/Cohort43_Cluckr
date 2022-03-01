@@ -3,7 +3,7 @@ const logger = require("morgan");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 
-const usersRouter = require("./routes/users");
+const rootRouter = require("./routes/root");
 const clucksRouter = require("./routes/clucks");
 
 const app = express();
@@ -28,12 +28,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use("/users", usersRouter);
+app.use("/", rootRouter);
 app.use("/clucks", clucksRouter);
-
-app.get("/", (req, res) => {
-  res.redirect("clucks/");
-});
 
 const PORT = 3000;
 const ADDRESS = "localhost";

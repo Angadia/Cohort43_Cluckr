@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 
 router.get("/new", (req, res) => {
   if (res.locals.username == "") {
-    res.render("users/sign_in");
+    res.redirect("/sign_in");
   } else {
     res.render("clucks/new");
   }
