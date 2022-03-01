@@ -12,7 +12,6 @@ html {
   box-sizing: inherit;
 }
 
-
 /*** header and navigation menu ***/
 
 .header {
@@ -49,7 +48,6 @@ html {
   align-items: center;
 }
 
-
 /*** Sign in form ***/
 
 .sign_in {
@@ -82,10 +80,55 @@ html {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  
 }
 
 .sign_in_form_submit_btn {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding: 1rem 4rem;
+  border-radius: 5px;
+}
+
+/*** Cluck at a time ***/
+
+.cluck_new {
+  width: 100%;
+  padding: 0.5em;
+}
+
+.cluck_new_form {
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.cluck_form_content_label {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.cluck_form_image_url_label {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.cluck_form_content_text,
+.cluck_form_image_url_text {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 5px;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.cluck_form_submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.cluck_form_cluck_btn {
   font-size: 1.2em;
   font-weight: 400;
   padding: 1rem 4rem;
