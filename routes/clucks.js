@@ -4,11 +4,11 @@ const knex = require("../db/client");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  if (res.locals.username == "") {
-    res.render("users/sign_in");
-  } else {
-    res.render("clucks/index");
-  }
+  knex("clucks")
+    .orderBy("created_at", "DESC")
+    .then((clucks) => {
+      res.render("clucks/index", { clucks: clucks });
+    });
 });
 
 router.get("/new", (req, res) => {
