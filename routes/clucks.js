@@ -1,5 +1,8 @@
 const express = require("express");
 const knex = require("../db/client");
+const TimeAgo = require('javascript-time-ago');
+const en = require('javascript-time-ago/locale/en');
+TimeAgo.addLocale(en);
 
 const router = express.Router();
 
@@ -7,6 +10,11 @@ router.get("/", (req, res) => {
   knex("clucks")
     .orderBy("created_at", "DESC")
     .then((clucks) => {
+      const timeAgo = new TimeAgo('en-CA');
+
+      clucks.forEach(cluck => {
+        cluck['time_ago'] = timeAgo.format(cluck.created_at);
+      });
       res.render("clucks/index", { clucks: clucks });
     });
 });
